@@ -19,24 +19,13 @@ const app = new Vue({
     
     data() {
         return {
-            items: [],
             inputValue: '',
             meetupTitle: ''
         }
     },
     
-    mounted() {
-        for (let i = 1; i < 6; i++) {
-            this.items.push({
-                item: i,
-                key: Math.random()
-            })
-        }
-    },
-    
     watch: {
         inputValue(newVal) {
-            this.inputValue = newVal;
             this.getTitle(newVal)
         }
     },

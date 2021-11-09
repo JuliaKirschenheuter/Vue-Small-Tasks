@@ -7,15 +7,12 @@
 <body>
 <div id="app">
     <div>
-        <span v-for="item in items" :key="item.key">
-            <label>
-                <input type="radio" :value="item.item" v-model="inputValue" /> {{ item.item }}
-            </label>
-        </span>
-
+        <label v-for="item in 5" :key="item">
+            <input type="radio" :value="item" v-model="inputValue" /> {{ item }}
+        </label>
         <hr />
 
-        <h3>{{meetupTitle}}</h3>
+        <h3>{{ meetupTitle }}</h3>
     </div>
 </div>
 
