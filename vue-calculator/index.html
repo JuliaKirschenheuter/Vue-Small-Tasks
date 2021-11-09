@@ -36,15 +36,7 @@
         <div class="col" style="display: flex; flex-direction: column; font-family: emoji">
             <!-- Двустороннее связывание радиокнопки со свойством в приложении -->
             <!-- v-model на радио определяет свойство checked и обновляется событием change -->
-            <label><input type="radio" value="sum" v-model="valueRadioButton"/> ➕</label>
-            <label><input type="radio" value="subtract" v-model="valueRadioButton"/> ➖</label>
-            <label><input type="radio" value="multiply" v-model="valueRadioButton" /> ✖</label>
-            <label><input type="radio" value="divide" v-model="valueRadioButton"/> ➗</label>
-
-<!--            <label><input type="radio" value="sum" @change="valueRadioButton = $event.target.value" :checked="valueRadioButton === 'sum'" /> ➕</label>-->
-<!--            <label><input type="radio" value="subtract" @change="valueRadioButton = $event.target.value" :checked="valueRadioButton === 'subtract'" /> ➖</label>-->
-<!--            <label><input type="radio" value="multiply" @change="valueRadioButton = $event.target.value" :checked="valueRadioButton === 'multiply'"  /> ✖</label>-->
-<!--            <label><input type="radio" value="divide" @change="valueRadioButton = $event.target.value" :checked="valueRadioButton === 'divide'" /> ➗</label>-->
+            <label v-for="button in buttons" :key="button.key"><input type="radio" :value="button.value" v-model="operation"/>{{ button.symbol }}</label>
         </div>
 
         <div class="col">
@@ -53,7 +45,7 @@
 
         <div class="col">=</div>
 
-        <output class="col">{{ resultValue }} </output>
+        <output class="col">{{ result }} </output>
     </div>
 </div>
 
