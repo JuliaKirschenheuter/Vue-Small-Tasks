@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>MarkedList</title>
     <style>
         .marked {
@@ -17,15 +17,15 @@
 <body>
 <div id="app" style="margin-top: 2rem">
     <div class="container">
-<!--        <input type="search" :value="searchItem" @input="searchItem = $event.target.value"/>-->
+        <!--        <input type="search" :value="searchItem" @input="searchItem = $event.target.value"/>-->
         <input type="search" v-model="searchItem"/>
         <ul>
-            <li v-for="email in emails"
-            :class="{
-                 'marked': email.includes(searchItem) && searchItem.length >= 1
-               }"
-
-            >{{email}}</li>
+            <li v-for="email in emails" :key="email.email"
+                :class="{
+                    'marked': email.toHighlight
+                }"
+            >{{ email.email }}
+            </li>
         </ul>
     </div>
 </div>

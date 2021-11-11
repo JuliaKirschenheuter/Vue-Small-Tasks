@@ -34,10 +34,19 @@ const app = new Vue({
     
     data() {
         return {
-            emails: emails,
             searchItem: ''
         }
+    },
+    
+    computed: {
+        emails() {
+            return emails.map(email => ({
+                email,
+                toHighlight: email.includes(this.searchItem) && this.searchItem.length
+            }));
+        }
     }
+    
     
 })
 
