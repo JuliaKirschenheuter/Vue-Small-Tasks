@@ -31,13 +31,9 @@ const app = new Vue({
         }
     },
     
+    buttons,
+    
     computed: {
-        buttons() {
-            return buttons.map((button, i) => ({
-                ...button,
-                key: `keyFor_${i}`
-            }))
-        },
         firstNumberAsNumber() {
             return Number(this.firstNumber);
         },
