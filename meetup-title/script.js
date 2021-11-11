@@ -16,6 +16,7 @@ function fetchMeetupById(meetupId) {
 
 const app = new Vue({
     template: `#app`,
+
     
     data() {
         return {
@@ -26,15 +27,10 @@ const app = new Vue({
     
     watch: {
         inputValue(newVal) {
-            this.getTitle(newVal)
+            return fetchMeetupById(newVal).then(title => this.meetupTitle = title.title)
         }
     },
     
-    methods: {
-        getTitle(value) {
-            fetchMeetupById(value).then(title => this.meetupTitle = title.title)
-        }
-    }
     
 })
 
