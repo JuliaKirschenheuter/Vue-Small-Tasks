@@ -7,7 +7,7 @@
         :value="searchItem"
         @input="$emit('update:searchItem', $event.target.value)"
     />
-    <slot name="ui-icon"></slot>
+    <slot name="ui-left-icon"></slot>
   </div>
 </template>
 
