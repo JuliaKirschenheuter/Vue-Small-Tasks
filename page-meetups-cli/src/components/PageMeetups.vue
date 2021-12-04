@@ -2,18 +2,12 @@
   <div class="container">
     <div class="filters-panel">
       <div class="filters-panel__col">
-        <ui-radio-group :selected.sync="filter.date" :options="$options.filterDataOptions" ></ui-radio-group>
+        <ui-radio-group v-model="filter.date" :options="$options.filterDataOptions" ></ui-radio-group>
       </div>
 
       <div class="filters-panel__col">
         <div class="form-group form-group_inline">
-          <ui-input icon-name="icon-search" :search-item.sync="filter.search">
-            <template v-slot:ui-icon>
-              <div class="input-group__icon">
-                <ui-icon icon-name="icon-search" alt="icon-search" class="meetup-info__icon" style="position: relative"></ui-icon>
-              </div>
-            </template>
-          </ui-input>
+          <meetups-search v-model="filter.search"  ></meetups-search>
         </div>
         <div class="form-group form-group_inline">
           <ui-button-group :selected.sync="view"></ui-button-group>
@@ -40,9 +34,8 @@ import MeetupsCalendar from "@/components/MeetupsCalendar";
 import MeetupsList from "@/components/MeetupsList";
 import MeetupsNotFound from "@/components/MeetupsNotFound";
 import UiButtonGroup from "@/components/UiButtonGroup";
-import UiInput from "@/components/UiInput";
 import UiRadioGroup from "@/components/UiRadioGroup";
-import UiIcon from "@/components/UiIcon";
+import MeetupsSearch from "@/components/MeetupsSearch";
 
 import {getMeetupCoverLink} from "../data";
 
@@ -63,13 +56,12 @@ export default {
   },
 
   components: {
-    UiInput,
+    MeetupsSearch,
     UiRadioGroup,
     MeetupsCalendar,
     MeetupsList,
     MeetupsNotFound,
-    UiButtonGroup,
-    UiIcon
+    UiButtonGroup
   },
 
   filterDataOptions,

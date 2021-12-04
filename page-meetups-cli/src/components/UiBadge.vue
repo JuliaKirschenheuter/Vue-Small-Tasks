@@ -1,9 +1,9 @@
 <template>
   <div>
-    <slot name="badge-success">
+    <slot name="badgeSuccess">
       <span class="meetup-card__badge badge badge_success">{{badgeText}}</span>
     </slot>
-    <slot name="badge-primary">
+    <slot name="badgePrimary">
       <span class="meetup-card__badge badge badge_success">{{badgeText}}</span>
     </slot>
   </div>

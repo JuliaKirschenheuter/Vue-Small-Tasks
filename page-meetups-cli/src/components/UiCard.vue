@@ -1,12 +1,12 @@
 <template>
   <article class="meetup-card card">
     <div class="card__col">
-      <slot name="card-cover"></slot>
+      <slot name="cardCover"></slot>
     </div>
     <div class="card__col">
       <div class="card__content">
-        <slot name="ui-badge"></slot>
-        <slot name="card-info"></slot>
+        <slot name="uiBadge"></slot>
+        <slot name="cardInfo"></slot>
       </div>
     </div>
   </article>

@@ -4,8 +4,8 @@
         class="form-control form-control_rounded form-control_sm"
         placeholder="Поиск"
         type="search"
-        :value="searchItem"
-        @input="$emit('update:searchItem', $event.target.value)"
+        :value="valueForInput"
+        @input="$emit('change', $event.target.value)"
     />
     <slot name="ui-left-icon"></slot>
   </div>
@@ -16,11 +16,12 @@
 export default {
   name: "UiInput",
   props: {
-    searchItem: {
+    valueForInput: {
       type: String,
       required: true
     }
-  }
+  },
+
 }
 </script>
 
