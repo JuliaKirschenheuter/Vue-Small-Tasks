@@ -1,5 +1,5 @@
 <template>
-  <ui-input :value="searchItem" @change="$emit('changeMeetupSearch', $event)" >
+  <ui-input :value="searchItem" @change="$emit('change', $event)" >
       <div class="input-group__icon">
         <ui-icon name="icon-search" alt="icon-search" class="meetup-info__icon" style="position: relative"></ui-icon>
       </div>
@@ -32,7 +32,7 @@ export default {
 
   model: {
     prop: 'searchItem',
-    event: 'changeMeetupSearch'
+    event: 'change'
   }
 }
 </script>
