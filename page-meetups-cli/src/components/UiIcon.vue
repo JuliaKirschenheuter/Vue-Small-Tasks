@@ -28,7 +28,7 @@ export default {
   name: "UiIcon",
 
   props: {
-    iconName: {
+    name: {
       required: true,
       type: String
     }
@@ -38,7 +38,7 @@ export default {
 
   computed: {
     iconSource() {
-      return this.$options.IconsMapping[this.iconName]
+      return this.$options.IconsMapping[this.name]
     }
   }
 }

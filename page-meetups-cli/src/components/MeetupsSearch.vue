@@ -1,10 +1,8 @@
 <template>
-  <ui-input :valueForInput="searchItem" @change="$emit('changeMeetupSearch', $event)" >
-    <template v-slot:uiLeftIcon>
+  <ui-input :value="searchItem" @change="$emit('changeMeetupSearch', $event)" >
       <div class="input-group__icon">
-        <ui-icon iconName="icon-search" alt="icon-search" class="meetup-info__icon" style="position: relative"></ui-icon>
+        <ui-icon name="icon-search" alt="icon-search" class="meetup-info__icon" style="position: relative"></ui-icon>
       </div>
-    </template>
   </ui-input>
 </template>
 

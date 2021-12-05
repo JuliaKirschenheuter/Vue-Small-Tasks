@@ -4,12 +4,12 @@
         id="radio-buttons_date_all"
         class="radio-group__input"
         type="radio"
-        :checked="selected === option.value"
-        :name="option.value"
-        :value="option.value"
-        @change="$emit('change', option.value)"
+        :checked="checked"
+        :name="value"
+        :value="value"
+        @change="$emit('change', value)"
     />
-    <label :for="option.value" class="radio-group__label">{{option.text}}</label>
+    <slot></slot>
   </div>
 </template>
 
@@ -17,12 +17,12 @@
 export default {
   name: "UiRadioButton",
   props: {
-    selected: {
-      type: String,
+    checked: {
+      type: Boolean,
       required: true
     },
-    option: {
-      type: Object,
+    value: {
+      type: String,
       required: true
     }
   }

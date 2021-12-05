@@ -1,12 +1,13 @@
 <template>
-  <article class="meetup-card card">
+  <article class="card">
     <div class="card__col">
-      <slot name="cardCover"></slot>
+      <div class="card__cover" :style="imageUrl && { '--bg-url': `url('${imageUrl}')` }">
+        <slot name="coverTitle"></slot>
+      </div>
     </div>
     <div class="card__col">
       <div class="card__content">
-        <slot name="uiBadge"></slot>
-        <slot name="cardInfo"></slot>
+        <slot></slot>
       </div>
     </div>
   </article>
@@ -18,8 +19,8 @@ export default {
   name: "UiCard",
 
   props: {
-    meetup: {
-      type: Object,
+    imageUrl: {
+      type: String,
       required: true
     }
   },

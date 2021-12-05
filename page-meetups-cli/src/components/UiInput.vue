@@ -4,10 +4,10 @@
         class="form-control form-control_rounded form-control_sm"
         placeholder="Поиск"
         type="search"
-        :value="valueForInput"
+        :value="value"
         @input="$emit('change', $event.target.value)"
     />
-    <slot name="ui-left-icon"></slot>
+    <slot></slot>
   </div>
 </template>
 
@@ -16,7 +16,7 @@
 export default {
   name: "UiInput",
   props: {
-    valueForInput: {
+    value: {
       type: String,
       required: true
     }
