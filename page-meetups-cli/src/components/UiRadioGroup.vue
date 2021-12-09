@@ -3,7 +3,6 @@
     <ui-radio-button :checked="option.value === selected" :value="option.value" :text="option.text"
       @change="$emit('change', $event)" class="radio-group__button"
       v-for="option in options" :key="option.value">
-      <label :for="option.value" class="radio-group__label">{{option.text}}</label>
     </ui-radio-button>
   </div>
 </template>
